@@ -1,8 +1,6 @@
-# The NHSbuntu website
+# The NHoS Project website
 
-Visit [www.nhsbuntu.org](https://www.nhsbuntu.org)
-
-Powered by Jekyll, themed with CloudCannon, hosted on Azure, SSL from Let's Encrypt
+Visit [nhos.openhealthhub.org](https://nhos.openhealthhub)
 
 ## Contributing
 

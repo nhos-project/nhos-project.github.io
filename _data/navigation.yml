@@ -11,6 +11,6 @@
   new_window: false
   highlight: false
 - name: Forum
-  link: https://www.openhealthhub.org/c/nhsbuntu
+  link: https://www.openhealthhub.org/c/nhos
   new_window: true
   highlight: true

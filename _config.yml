@@ -1,23 +1,23 @@
 # ----
 # Site
 
-title: NHSbuntu
-url: https://www.nhsbuntu.org
+title: NHoS Project
+url: https://nhos.openhealthhub.org
 baseurl:
 google_analytics_key: UA-94014524-1
 google_maps_javascript_api_key:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo:
-description: NHSbuntu
+description: NHoS Project
 author:
-  name: NHSbuntu
-  email: info@openhealthhub.org
-  twitter: nhsbuntu
+  name: NHoS Team
+  email: nhos@openhealthhub.org
+  twitter: openhealthhub
 social:
-  name: NHSbuntu
+  name: NHoS Project
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+    - https://github.com/nhos-project/nhos.openhealthhub.org  
 
 # -----
 # Build
