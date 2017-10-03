@@ -32,15 +32,29 @@ The Register wrote a _Special Report_ ["Ubuntu 'weaponised' to cure NHS of its a
 
 <a id="a_spot_of_bother"></a>
 ### A spot of bother.
-Behind the scenes, we've been in a spot of bother with the Department of Health NHS Brand Police. When Marcus and I started this project, we knew that blending by _NHS_ & _Ubuntu_ together we'd a) quickly explain exactly what the thing was; b) be likely to get in trouble with Canonical or the DoH. And so it came to pass that Canonical were totally fine with the remix and the DoH were not.
+Behind the scenes we've been in a spot of bother with the Department of Health NHS Brand Police. When Marcus and I started this project, we knew that blending by _NHS_ & _Ubuntu_ together we'd a) quickly explain exactly what the thing was; b) be likely to get in trouble with Canonical or the DoH. And so it came to pass that Canonical were totally fine with the remix and the DoH were not.
 
-Marcus has posted more details in a forum post [NHSbuntu Name Change](https://www.openhealthhub.org/t/nhsbuntu-name-change/1211)
+Marcus has posted more details in his post - [NHSbuntu Name Change](https://www.openhealthhub.org/t/nhsbuntu-name-change/1211)
 
 <a id="working_with_us"></a>
 ### Working with us.
+We've had several big names in open source get in touch with us.
 
-<a id="actually_using_nhsbuntu"></a>
-### Actually using NHSbuntu.
+**Canonical** approached us after the El Reg article. We've discussed becoming an Official Ubuntu Flavour and using the Canonical tools to make our lives easier and the build faster.
+
+**RedHat** have also been in touch recently. Talking with them has made us think about becoming a cross-distribution project. Watch this space!
+
+**Cisco** invited us to collaborate in a healthcare 'alternative desktop' demonstrator. This could lead to a significant pilot in at an NHS Trust. Fingers crossed!
+
+**Hashicorp** are getting behind us, supporting us with sponsorship and access to the cloud services they offer. We've been using Vagrant and Packer in creating NHSbuntu, so support from them is most welcome.
+
+**Chocolatey** are also getting involved. Hopefully we'll be able to offer an official N3 hosted package repository for applications widely used on MS desktops in the NHS.
 
 <a id="whats_coming_up"></a>
 ### What’s coming up.
+**Renaming the project** We've started to rename ourselves as _NHoS_. You may have already noticed that our website and twitter name have changed. Please bear with us while we tranisition many things.
+
+**Events** We'll be presenting at this RedHat event in Leeds in November [Driving Public Sector Digital Transformation through Open Source Solutions](https://www.redhat.com/en/about/events/driving-digital-transformation-through-open-source-solutions-leeds)
+
+### Thanks
+We've had loads of messages of support and encouragement over the last few months. We appreciate it. Thank you.
