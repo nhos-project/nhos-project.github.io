@@ -33,8 +33,8 @@ Hippo Digital were approached to offer insight and assistance in the identity sp
 
 The NHS relies upon Smartcards as a strong and effective mechanism to ensure that only authorised individuals can access health records, and that commitments such and the Care Record Guarantee and Data Protection Act are upheld.
 
-The first task…, can we get Smartcard authentication working on NHSbuntu…? By doing this we not only achieve the milestone of overcoming a significant technical hurdle, but we also make a very large initial step toward winning hearts and minds around proving that the platform offer a true viable alternative to the incumbent and expensive alternatives.
+> The first task…, can we get Smartcard authentication working on NHSbuntu…?
 
-Find out more about NHSbuntu here - [https://www.nhsbuntu.org](https://www.nhsbuntu.org)
+By doing this we not only achieve the milestone of overcoming a significant technical hurdle, but we also make a very large initial step toward winning hearts and minds around proving that the platform offer a true viable alternative to the incumbent and expensive alternatives.
 
-Find out more about Hippo Digital here - [http://hippodigital.co.uk](https://www.nhsbuntu.org)
+Find out more about [Hippo Digital](http://hippodigital.co.uk)
