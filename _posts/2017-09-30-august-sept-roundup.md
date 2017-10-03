@@ -11,7 +11,6 @@ Marcus and I had a busy summer, what with holidays, hospitals, hacks (days/weeks
 - [In the news](#in_the_news)
 - [A spot of bother](#a_spot_of_bother)
 - [Working with us](#working_with_us)
-- [Actually using NHSbuntu](#actually_using_nhsbuntu)
 - [What’s coming up](#whats_coming_up)
 
 <a id="a_winning_hack"></a>
