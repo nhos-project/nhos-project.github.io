@@ -2,7 +2,7 @@
 	color: #fff;
 	text-decoration: none;
 	padding: 10px 30px;
-	background: $brand-color;
+	background: $secondary-brand-color;
 	border-radius: 3px;
 	border: 1px solid rgba(255,255,255,.5);
 	transition: .2s ease-in-out;
@@ -11,7 +11,7 @@
 
 .button a:hover, input[type=submit]:hover {
 	border: 1px solid #fff;
-	background: $secondary-brand-color;
+	background: $brand-color;
 	cursor: pointer;
 }
 

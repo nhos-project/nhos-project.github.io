@@ -2,6 +2,7 @@
 ---
 @import "mixins/flexbox";
 @import "mixins/columns";
+@import "palette";
 @import "variables";
 @import "elements";
 @import "landing-page";
@@ -14,5 +15,5 @@
 @import "navigation";
 @import "footer";
 @import "cloudcannon";
-@import "{{ site.baseurl }}/node_modules/github-fork-ribbon-css/gh-fork-ribbon.css";
+// @import "{{ site.baseurl }}/node_modules/github-fork-ribbon-css/gh-fork-ribbon.css";
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i);
