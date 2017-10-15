@@ -27,7 +27,7 @@ Shout outs to [ramensen](https://github.com/ramensen), [cian](https://github.com
 ### In the news.
 The Register wrote a _Special Report_ ["Ubuntu 'weaponised' to cure NHS of its addiction to Microsoft Windows"](https://www.theregister.co.uk/2017/06/30/nhsbuntu_nhs_revolution/) about us. For some reason this article really got readers fired-up as the post attracted nearly 300 comments!
 
-![The Register NHSbuntu article.](/images/the_register_30_june_2017.png){:class="screenshot"}
+![The Register NHSbuntu article.](/images/pagegrabs/the_register_30_june_2017.png){:class="screenshot"}
 
 <a id="a_spot_of_bother"></a>
 ### A spot of bother.
