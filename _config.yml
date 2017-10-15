@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: NHoS Project
+title: NHoS
 url: https://nhos.openhealthhub.org
 baseurl:
 google_analytics_key: UA-94014524-1
@@ -9,15 +9,15 @@ google_maps_javascript_api_key:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo:
-description: NHoS Project
+description: An OS for the NHS
 author:
   name: NHoS Team
   email: nhos@openhealthhub.org
   twitter: openhealthhub
 social:
-  name: NHoS Project
+  name: NHoS Team
   links:
-    - https://github.com/nhos-project/nhos.openhealthhub.org  
+    - https://github.com/nhos-project/nhos.openhealthhub.org
 
 # -----
 # Build

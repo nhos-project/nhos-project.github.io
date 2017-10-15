@@ -1,4 +1,4 @@
-# The NHoS Project website
+# NHoS website
 
 Visit [nhos.openhealthhub.org](https://nhos.openhealthhub)
 
