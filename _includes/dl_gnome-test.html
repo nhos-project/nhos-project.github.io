@@ -1,0 +1,47 @@
+{% assign nhosGnomeTest64 = site.data.iso | where: 'flavour', 'gnome-test' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
+{% assign nhosGnomeTest32 = site.data.iso | where: 'flavour', 'gnome-test' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+
+<h3>NHoS Test build</h3>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<tbody>
+{% for iso in nhosGnomeTest32 limit:1 %}
+<tr>
+  <td markdown="span">
+  <span class="button">
+    <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO32', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+      Download 32bit ISO
+    </a>
+  </span>
+  </td>
+  <td markdown="span">
+    <p>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+      MD5: {{ iso.md5sum }}</p>
+  </td>
+</tr>
+{% endfor %}
+<tr></tr>
+{% for iso in nhosGnomeTest64 limit:1 %}
+<tr>
+  <td markdown="span">
+  <span class="button">
+    <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO64', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+      Download 64bit ISO
+    </a>
+  </span>
+  </td>
+  <td markdown="span">
+  <span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+    MD5: {{ iso.md5sum }}<br/>
+    SHA256: {{ iso.sha256sum }}</span>
+  </td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>

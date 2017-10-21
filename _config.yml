@@ -50,6 +50,11 @@ defaults:
       layout: "page"
   -
     scope:
+      path: "download.html"
+    values:
+      layout: "page"
+  -
+    scope:
       path: "team.html"
     values:
       layout: "page"
