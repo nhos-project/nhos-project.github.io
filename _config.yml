@@ -52,7 +52,7 @@ defaults:
     scope:
       path: "download.html"
     values:
-      layout: "page"
+      layout: "default"
   -
     scope:
       path: "team.html"

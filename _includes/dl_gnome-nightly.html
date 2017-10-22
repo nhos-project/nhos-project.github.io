@@ -4,46 +4,65 @@
 
 {% if nhosGnomeNightly.size > 0 %}
 
-<h3>NHoS Nightly builds</h3>
 
-<table>
-<colgroup>
-  <col />
-  <col />
-</colgroup>
+<section>
+<div class="text-container" align="center">
+  <h3>NHoS Nightly builds</h3>
+</div>
 
-<tbody align="left">
-{% for iso in nhosGnomeNightly32 limit:1 %}
-<tr>
-  <td markdown="span">
-  <span class="button">
-    <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO32', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
-      Download 32bit ISO
-    </a>
-  </span>
-  </td>
-  <td>
-    <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
-      Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
-  </td>
-{% endfor %}
-</tr>
-<tr>
-{% for iso in nhosGnomeNightly64 limit:1 %}
-  <td markdown="span">
-  <span class="button">
-    <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO64', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
-      Download 64bit ISO
-    </a>
-  </span>
-  </td>
-  <td>
-    <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
-      Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
-  </td>
-</tr>
-{% endfor %}
+  <div class="container flex">
+    <div class="text editable">
 
-</tbody>
-</table>
-{% endif %}
+    <table>
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+
+      <tbody align="left">
+        {% for iso in nhosGnomeNightly64 limit:1 %}
+      <tr align="center">
+        <td markdown="span">
+          <span class="button">
+            <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO64', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+              64bit ISO
+            </a>
+          </span>
+        </td>
+
+        <td>
+          <span>{{ iso.date | date: '%d %b %Y' }}<br/>
+            <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
+          </td>
+        </tr>
+        {% endfor %}
+
+        {% for iso in nhosGnomeNightly32 limit:1 %}
+        <tr align="center">
+          <td markdown="span">
+            <span class="button">
+              <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO32', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+                32bit ISO
+              </a>
+            </span>
+          </td>
+
+          <td>
+            <span>{{ iso.date | date: '%d %b %Y' }}<br/>
+              <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
+            </td>
+          </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+
+        </div>
+        <div class="image">
+          <img src="/images/screenshots/nhos-gnome-amd64-20171022-binary-desktop.png" alt="Screenshot of NHoS desktop" />
+        </div>
+      </div>
+    </section>
+
+        {% endif %}

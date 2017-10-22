@@ -3,15 +3,37 @@ title: NHoS Download
 description:
 ---
 <div class="content">
-	<section class="page">
-		<div class="container {% if page.full_width %}max-container{% endif %}">
-      {% include dl_gnome.html %}
-			<br/><br/><br/><br/>
-			<h2>NHoS Alternative Downloads</h2>
-      {% include dl_gnome-nightly.html %}
-      {% include dl_gnome-test.html %}
-      {% include dl_cinnamon-dev.html %}
-      {% include dl_mate-dev.html %}
-    </div>
-	</section>
+
+{% include dl_gnome.html %}
+
+<section>
+
+	<div class="container flex">
+
+		<div class="text editable">
+			{% include dl_gnome-test.html %}
+		</div>
+
+		<div class="text editable">
+			{% include dl_gnome-nightly.html %}
+		</div>
+
+	</div>
+</section>
+
+<section>
+
+	<div class="container flex">
+
+		<div class="text editable">
+			{% include dl_cinnamon-dev.html %}
+		</div>
+
+		<div class="text editable">
+			{% include dl_mate-dev.html %}
+		</div>
+
+	</div>
+</section>
+
 </div>
