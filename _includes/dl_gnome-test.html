@@ -1,6 +1,12 @@
+{% if jekyll.environment == 'production' %}
 {% assign nhosGnomeTest = site.data.iso | where: 'flavour', 'gnome-test' %}
 {% assign nhosGnomeTest64 = site.data.iso | where: 'flavour', 'gnome-test' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
 {% assign nhosGnomeTest32 = site.data.iso | where: 'flavour', 'gnome-test' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% else %}
+{% assign nhosGnomeTest = site.data.iso-test | where: 'flavour', 'gnome-test' %}
+{% assign nhosGnomeTest64 = site.data.iso-test | where: 'flavour', 'gnome-test' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
+{% assign nhosGnomeTest32 = site.data.iso-test | where: 'flavour', 'gnome-test' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% endif %}
 
 {% if nhosGnomeTest.size > 0 %}
 

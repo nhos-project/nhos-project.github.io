@@ -1,8 +1,17 @@
+{% if jekyll.environment == 'production' %}
 {% assign nhosCinnamonDev = site.data.iso | where: 'flavour', 'cinnamon-dev' %}
 {% assign nhosCinnamonDev64 = site.data.iso | where: 'flavour', 'cinnamon-dev' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
 {% assign nhosCinnamonDev32 = site.data.iso | where: 'flavour', 'cinnamon-dev' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% else %}
+{% assign nhosCinnamonDev = site.data.iso-test | where: 'flavour', 'cinnamon-dev' %}
+{% assign nhosCinnamonDev64 = site.data.iso-test | where: 'flavour', 'cinnamon-dev' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
+{% assign nhosCinnamonDev32 = site.data.iso-test | where: 'flavour', 'cinnamon-dev' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% endif %}
+
+
 
 {% if nhosCinnamonDev.size > 0 %}
+
 <section>
 <div class="text-container" align="center">
   <h3>NHoS Cinnamon Dev build</h3>

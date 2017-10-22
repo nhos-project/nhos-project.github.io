@@ -1,5 +1,13 @@
+{% if jekyll.environment == 'production' %}
 {% assign nhosGnome64 = site.data.iso | where: 'flavour', 'gnome' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
 {% assign nhosGnome32 = site.data.iso | where: 'flavour', 'gnome' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% else %}
+{% assign nhosGnome64 = site.data.iso-test | where: 'flavour', 'gnome' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
+{% assign nhosGnome32 = site.data.iso-test | where: 'flavour', 'gnome' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% endif %}
+
+
+
 
 <section>
     <div class="text-container" align="center">
@@ -34,7 +42,7 @@
           </td>
         </tr>
         {% endfor %}
-        
+
       {% for iso in nhosGnome32 limit:1 %}
       <tr>
         <td markdown="span">

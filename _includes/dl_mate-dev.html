@@ -1,6 +1,12 @@
+{% if jekyll.environment == 'production' %}
 {% assign nhosMateDev = site.data.iso | where: 'flavour', 'mate-dev' %}
 {% assign nhosMateDev64 = site.data.iso | where: 'flavour', 'mate-dev' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
 {% assign nhosMateDev32 = site.data.iso | where: 'flavour', 'mate-dev' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% else %}
+{% assign nhosMateDev = site.data.iso-test | where: 'flavour', 'mate-dev' %}
+{% assign nhosMateDev64 = site.data.iso-test | where: 'flavour', 'mate-dev' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
+{% assign nhosMateDev32 = site.data.iso-test | where: 'flavour', 'mate-dev' | where: 'arch', 'i386' | sort: 'date' | reverse %}
+{% endif %}
 
 {% if nhosMateDev.size > 0 %}
 
