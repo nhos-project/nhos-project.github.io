@@ -1,15 +1,18 @@
+{% assign nhosGnomeNightly = site.data.iso | where: 'flavour', 'gnome-nightly' %}
 {% assign nhosGnomeNightly64 = site.data.iso | where: 'flavour', 'gnome-nightly' | where: 'arch', 'amd64' | sort: 'date' | reverse %}
 {% assign nhosGnomeNightly32 = site.data.iso | where: 'flavour', 'gnome-nightly' | where: 'arch', 'i386' | sort: 'date' | reverse %}
 
-<h3>NHoS Nightly build</h3>
+{% if nhosGnomeNightly.size > 0 %}
+
+<h3>NHoS Nightly builds</h3>
 
 <table>
 <colgroup>
-<col />
-<col />
+  <col />
+  <col />
 </colgroup>
 
-<tbody>
+<tbody align="left">
 {% for iso in nhosGnomeNightly32 limit:1 %}
 <tr>
   <td markdown="span">
@@ -19,16 +22,14 @@
     </a>
   </span>
   </td>
-  <td markdown="span">
-  <span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
-    MD5: {{ iso.md5sum }}<br/>
-    SHA256: {{ iso.sha256sum }}</span>
+  <td>
+    <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
+      Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
   </td>
-</tr>
 {% endfor %}
-<tr></tr>
-{% for iso in nhosGnomeNightly64 limit:1 %}
+</tr>
 <tr>
+{% for iso in nhosGnomeNightly64 limit:1 %}
   <td markdown="span">
   <span class="button">
     <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO64', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
@@ -36,13 +37,13 @@
     </a>
   </span>
   </td>
-  <td markdown="span">
-  <span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
-    MD5: {{ iso.md5sum }}<br/>
-    SHA256: {{ iso.sha256sum }}</span>
+  <td>
+    <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
+      Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
   </td>
 </tr>
 {% endfor %}
 
 </tbody>
 </table>
+{% endif %}
