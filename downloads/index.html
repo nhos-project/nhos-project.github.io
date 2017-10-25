@@ -1,0 +1,46 @@
+---
+title: NHoS Alternative Downloads
+description:
+---
+{% if jekyll.environment == 'production' %}
+	{% assign nhosAltDl = site.data.iso %}
+{% else %}
+	{% assign nhosAltDl = site.data.iso-test %}
+{% endif %}
+
+<div class="content">
+<section>
+    <div class="text-container" align="center">
+      <h2>Alternative NHoS Downloads</h2>
+    </div>
+  <div class="container flex">
+    <div class="text editable">
+      <h3>Nightly Builds</h3>
+      <table>
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+      <tbody align="left">
+				{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse%}
+					{% for date in iso_by_date %}
+					  {% for iso in date.items %}
+			        <tr>
+			          <td markdown="span">
+									{{ iso.date | date: '%d %b %Y' }},
+										<a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+			          </td>
+			          <td>
+									<span class="button">
+										<a onclick="ga('send', 'event', 'Downloads', 'Click', '{{ item.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+											Download {% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %}
+										</a>
+									</span>
+			          </td>
+			        </tr>
+				  	{% endfor %}
+					{% endfor %}
+      </tbody>
+      </table>
+    </div>
+</section>
