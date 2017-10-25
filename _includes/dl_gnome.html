@@ -6,66 +6,54 @@
 {% assign nhosGnome32 = site.data.iso-test | where: 'flavour', 'gnome' | where: 'arch', 'i386' | sort: 'date' | reverse %}
 {% endif %}
 
-
-
-
 <section>
     <div class="text-container" align="center">
-      <h2>Download NHoS</h2>
+      <h2>NHoS Downloads</h2>
     </div>
-
   <div class="container flex">
+    <div class="image">
+      <img src="/images/screenshots/nhos-gnome-amd64-20171022-binary-desktop.png" alt="Screenshot of NHoS desktop" class="screenshot" />
+    </div>
     <div class="text editable">
-      <h3>NHoS Stable</h3>
-
+      <h2>Current Release</h2>
       <table>
       <colgroup>
         <col />
         <col />
       </colgroup>
-
       <tbody align="left">
-
         {% for iso in nhosGnome64 limit:1 %}
         <tr>
-
           <td markdown="span">
           <span class="button">
-            <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO64', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+            <a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
               Download 64bit ISO
             </a>
           </span>
           </td>
           <td>
-            <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
+            <span>Released: {{ iso.date | date: '%d %b %Y' }}<br/>
               Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
           </td>
         </tr>
         {% endfor %}
-
       {% for iso in nhosGnome32 limit:1 %}
       <tr>
         <td markdown="span">
         <span class="button">
-          <a onclick="ga('send', 'event', 'Downloads', 'Click', 'ISO32', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
+          <a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">
             Download 32bit ISO
           </a>
         </span>
         </td>
         <td>
-          <span>Built: {{ iso.date | date: '%d %b %Y' }}<br/>
+          <span>Released: {{ iso.date | date: '%d %b %Y' }}<br/>
             Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a></span>
         </td>
       </tr>
             {% endfor %}
-
-
       </tbody>
       </table>
-
-    </div>
-    <div class="image">
-      <img src="/images/screenshots/nhos-gnome-amd64-20171022-binary-desktop.png" alt="Screenshot of NHoS desktop" class="screenshot" />
     </div>
   </div>
 </section>
