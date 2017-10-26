@@ -41,14 +41,16 @@ description:
     </div> -->
   <div class="container flex">
     <div class="text editable">
-			<h3>Test Builds</h3>
+			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-test' | group_by:'date' |reverse %}
+			{% if iso_by_date.size > 0 %}
+						<h3>Test Builds</h3>
 			<table>
 			<colgroup>
 				<col />
 				<col />
 			</colgroup>
 			<tbody align="left">
-				{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-test' | group_by:'date' |reverse %}
+
 					{% for date in iso_by_date limit:1 %}
 						{% for iso in date.items %}
 							<tr>
@@ -63,13 +65,15 @@ description:
 							</tr>
 						{% endfor %}
 					{% endfor %}
-			</tbody>
+					</tbody>
 			</table>
-
+						{% endif %}
     </div>
 <!-- </div>
 	<div class="container flex"> -->
 		<div class="text editable">
+			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse %}
+			{% if iso_by_date.size > 0 %}
 			<h3>Nightly Builds</h3>
 	      <table>
 	      <colgroup>
@@ -77,7 +81,6 @@ description:
 	        <col />
 	      </colgroup>
 	      <tbody align="left">
-					{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse %}
 						{% for date in iso_by_date limit:1 %}
 						  {% for iso in date.items %}
 				        <tr>
@@ -94,6 +97,7 @@ description:
 						{% endfor %}
 	      </tbody>
 	      </table>
+										{% endif %}
 		</div>
 	</div>
 </section>
