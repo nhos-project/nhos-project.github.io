@@ -9,17 +9,23 @@ description: # stuff about teams
 			<div class="square-image"><img src="{{ person.image_path }}" alt="Photograph of {{ person.name }}"></div>
 			<div class="name">{{ person.name }}</div>
 			<div class="position">{{ person.position }}</div>
-			<div class="twitter">
-				<i class="fa fa-twitter-square fa-lg"></i>
-				<a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a>
-			</div>
-			<div class="twitter">
-				<i class="fa fa-github-square fa-lg"></i>
-				<a href="https://github.com/{{ person.github }}">{{ person.github }}</a>
-			</div>
+			<br/>
 			<div class="blurb">
 				{{ person.blurb }}
 			</div>
+			<br/>
+			{% if person.twitter %}
+			<div class="twitter">
+				<i class="fa fa-twitter-square fa-lg"></i>
+				<a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a>
+			<!-- </div> -->
+			{% endif %}
+			{% if person.github %}
+			<!-- <div class="twitter"> -->
+				<i class="fa fa-github-square fa-lg"></i>
+				<a href="https://github.com/{{ person.github }}">{{ person.github }}</a>
+			</div>
+			{% endif %}			
 		</li>
 	{% endfor %}
 </ul>
