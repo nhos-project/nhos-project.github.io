@@ -52,7 +52,7 @@ defaults:
     scope:
       path: "download.html"
     values:
-      layout: "default"
+      layout: "page"
   -
     scope:
       path: "team.html"
@@ -68,7 +68,7 @@ defaults:
       path: "blog/index.html"
     values:
       layout: "page"
-      comments: true
+      comments: false
   -
     scope:
       path: "downloads/index.html"
