@@ -2,7 +2,6 @@
 title: The Team
 description: # stuff about teams
 ---
-
 <ul class="staff">
 	{% for person in site.staff_members %}
 		<li>
@@ -14,18 +13,16 @@ description: # stuff about teams
 				{{ person.blurb }}
 			</div>
 			<br/>
-			{% if person.twitter %}
 			<div class="twitter">
+			{% if person.twitter %}
 				<i class="fa fa-twitter-square fa-lg"></i>
 				<a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a>
-			<!-- </div> -->
 			{% endif %}
 			{% if person.github %}
-			<!-- <div class="twitter"> -->
 				<i class="fa fa-github-square fa-lg"></i>
 				<a href="https://github.com/{{ person.github }}">{{ person.github }}</a>
+			{% endif %}
 			</div>
-			{% endif %}			
 		</li>
 	{% endfor %}
 </ul>
