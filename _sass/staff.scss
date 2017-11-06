@@ -3,7 +3,7 @@
 	list-style: none;
 	@extend %flexbox;
 	@include flex-flow(wrap);
-	text-align: center;
+	text-align: justify;
 	li {
 		padding: 30px 20px;
 		box-sizing: border-box;
@@ -30,15 +30,19 @@
 	.name {
 		font-size: 1.3em;
 		margin-top: 20px;
+		text-align: center;
 	}
 
 	.position {
 		color: #666;
+		text-align: center;
 	}
 	.twitter {
 		padding: 1px;
+		text-align: center;
 	}
 	.github {
 		padding: 1px;
+		text-align: center;
 	}
 }
