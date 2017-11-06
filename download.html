@@ -12,45 +12,18 @@ description:
 
 {% include dl_gnome.html %}
 
-<!-- <section>
-
-	<div class="container flex">
-
-		<div class="text editable">
-			{% include dl_gnome-nightly.html %}
-		</div>
-
-	</div>
-</section>
-
 <section>
-
-	<div class="container flex">
-
-		<div class="text editable">
-			{% include dl_gnome-test.html %}
-		</div>
-
-	</div>
-</section> -->
-
-
-<section>
-    <!-- <div class="text-container" align="center">
-      <h2>Alternative NHoS Downloads</h2>
-    </div> -->
   <div class="container flex">
     <div class="text editable">
 			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-test' | group_by:'date' |reverse %}
 			{% if iso_by_date.size > 0 %}
-						<h3>Test Builds</h3>
+			<h3>Test Builds</h3>
 			<table>
 			<colgroup>
 				<col />
 				<col />
 			</colgroup>
 			<tbody align="left">
-
 					{% for date in iso_by_date limit:1 %}
 						{% for iso in date.items %}
 							<tr>
@@ -67,10 +40,9 @@ description:
 					{% endfor %}
 					</tbody>
 			</table>
-						{% endif %}
+			{% endif %}
     </div>
-<!-- </div>
-	<div class="container flex"> -->
+
 		<div class="text editable">
 			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse %}
 			{% if iso_by_date.size > 0 %}
@@ -97,10 +69,9 @@ description:
 						{% endfor %}
 	      </tbody>
 	      </table>
-										{% endif %}
+				{% endif %}
 		</div>
 	</div>
 </section>
-
 
 </div>
