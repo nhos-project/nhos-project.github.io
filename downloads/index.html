@@ -11,9 +11,6 @@ description:
 <div class="content">
 
 	<section>
-	    <!-- <div class="text-container" align="center">
-	      <h2>NHoS Downloads</h2>
-	    </div> -->
 	  <div class="container flex">
 	    <div class="image">
 	      <img src="/images/screenshots/nhos-gnome-amd64-20171022-binary-desktop.png" alt="Screenshot of NHoS desktop" class="screenshot" />
@@ -22,7 +19,6 @@ description:
 	      <h2>Current Release</h2>
 				{% assign iso_by_date = nhosDl | where: 'flavour', 'gnome' | group_by:'date' |reverse %}
 				{% if iso_by_date.size > 0 %}
-				<!-- <h3>Test Builds</h3> -->
 				<table>
 				<colgroup>
 					<col />
