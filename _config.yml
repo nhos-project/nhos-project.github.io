@@ -73,7 +73,7 @@ defaults:
     scope:
       path: "downloads/index.html"
     values:
-      layout: "default"
+      layout: "page"
 
 jekyll-archives:
   enabled:
