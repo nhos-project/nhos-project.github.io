@@ -30,12 +30,13 @@ description:
 								<tr>
 									<td>
 										<span class="button">
-											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">Download {% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %} ISO</a>
+											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %} ISO</a>
 										</span>
 									</td>
 									<td>
 										<span>Released: {{ iso.date | date: '%d %b %Y' }}<br/>
-										Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										</span>
 									</td>
 								</tr>
 							{% endfor %}
@@ -64,11 +65,13 @@ description:
 							<tr>
 								<td>
 									<span class="button">
-										<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %}, {{ iso.date | date: '%d %b %Y' }}</a>
+										<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit ISO{% elsif iso.arch == 'i386' %}32 bit ISO{% endif %}</a>
 									</span>
 								</td>
 								<td>
-									Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+									<span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+									Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+								</span>
 								</td>
 							</tr>
 						{% endfor %}
@@ -90,12 +93,10 @@ description:
 	      <tbody align="left">
 					<tr>
 						<td>
-							<span class="button">
-							<img src="https://travis-ci.org/nhos-project/ubuntu-defaults-image.svg?branch=master">
-						</span>
+							<a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/"><img src="https://travis-ci.org/nhos-project/ubuntu-defaults-image.svg?branch=master"></a>
 						</td>
 						<td>
-							Build history: <a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/">Travis-CI</a>
+							<a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/">Build history on Travis-CI</a>
 						</td>
 					</tr>
 						{% for date in iso_by_date limit:1 %}
@@ -103,11 +104,13 @@ description:
 				        <tr>
 				          <td>
 										<span class="button">
-											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %}, {{ iso.date | date: '%d %b %Y' }}</a>
+											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit ISO{% elsif iso.arch == 'i386' %}32 bit ISO{% endif %}</a>
 										</span>
 				          </td>
 				          <td>
-										Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										<span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+										Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										</span>
 				          </td>
 				        </tr>
 					  	{% endfor %}

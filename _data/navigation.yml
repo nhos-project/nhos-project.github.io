@@ -1,5 +1,5 @@
 - name: Download
-  link: /downloads/
+  link: /download
   new_window: false
   highlight: false
 - name: Blog

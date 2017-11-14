@@ -3,19 +3,55 @@ title: NHoS Download
 description:
 ---
 {% if jekyll.environment == 'production' %}
-	{% assign nhosAltDl = site.data.iso %}
+	{% assign nhosDl = site.data.iso %}
 {% else %}
-	{% assign nhosAltDl = site.data.iso-test %}
+	{% assign nhosDl = site.data.iso-test %}
 {% endif %}
 
 <div class="content">
 
-{% include dl_gnome.html %}
+	<section>
+	  <div class="container flex">
+	    <div class="image">
+	      <img src="/images/screenshots/nhos-gnome-amd64-20171022-binary-desktop.png" alt="Screenshot of NHoS desktop" class="screenshot" />
+	    </div>
+	    <div class="text editable">
+	      <h2>Current Release</h2>
+				{% assign iso_by_date = nhosDl | where: 'flavour', 'gnome' | group_by:'date' |reverse %}
+				{% if iso_by_date.size > 0 %}
+				<table>
+				<colgroup>
+					<col />
+					<col />
+				</colgroup>
+				<tbody align="left">
+						{% for date in iso_by_date limit:1 %}
+							{% for iso in date.items %}
+								<tr>
+									<td>
+										<span class="button">
+											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %} ISO</a>
+										</span>
+									</td>
+									<td>
+										<span>Released: {{ iso.date | date: '%d %b %Y' }}<br/>
+										Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										</span>
+									</td>
+								</tr>
+							{% endfor %}
+						{% endfor %}
+						</tbody>
+				</table>
+				{% endif %}
+	    </div>
+	  </div>
+	</section>
 
 <section>
   <div class="container flex">
     <div class="text editable">
-			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-test' | group_by:'date' |reverse %}
+			{% assign iso_by_date = nhosDl | where: 'flavour', 'gnome-test' | group_by:'date' |reverse %}
 			{% if iso_by_date.size > 0 %}
 			<h3>Test Builds</h3>
 			<table>
@@ -29,11 +65,13 @@ description:
 							<tr>
 								<td>
 									<span class="button">
-										<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %}, {{ iso.date | date: '%d %b %Y' }}</a>
+										<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit ISO{% elsif iso.arch == 'i386' %}32 bit ISO{% endif %}</a>
 									</span>
 								</td>
 								<td>
-									Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+									<span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+									Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+								</span>
 								</td>
 							</tr>
 						{% endfor %}
@@ -44,7 +82,7 @@ description:
     </div>
 
 		<div class="text editable">
-			{% assign iso_by_date = nhosAltDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse %}
+			{% assign iso_by_date = nhosDl | where: 'flavour', 'gnome-nightly' | group_by:'date' |reverse %}
 			{% if iso_by_date.size > 0 %}
 			<h3>Nightly Builds</h3>
 	      <table>
@@ -55,12 +93,10 @@ description:
 	      <tbody align="left">
 					<tr>
 						<td>
-							<span class="button">
-							<img src="https://travis-ci.org/nhos-project/ubuntu-defaults-image.svg?branch=master">
-						</span>
+							<a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/"><img src="https://travis-ci.org/nhos-project/ubuntu-defaults-image.svg?branch=master"></a>
 						</td>
 						<td>
-							Build history: <a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/">Travis-CI</a>
+							<a href="https://travis-ci.org/nhos-project/ubuntu-defaults-image/">Build history on Travis-CI</a>
 						</td>
 					</tr>
 						{% for date in iso_by_date limit:1 %}
@@ -68,11 +104,13 @@ description:
 				        <tr>
 				          <td>
 										<span class="button">
-											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit{% elsif iso.arch == 'i386' %}32 bit{% endif %}, {{ iso.date | date: '%d %b %Y' }}</a>
+											<a onclick="ga('send', 'event', 'Downloads', 'ISO', '{{ iso.arch }}', '0');" href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}">{% if iso.arch == 'amd64' %}64 bit ISO{% elsif iso.arch == 'i386' %}32 bit ISO{% endif %}</a>
 										</span>
 				          </td>
 				          <td>
-										Checksums: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.md5sum.txt">MD5</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha1sum.txt">SHA1</a> <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										<span>Build: {{ iso.date | date: '%d %b %Y' }}<br/>
+										Checksum: <a href="{{ site.url }}/ISO/{{ iso.arch }}/{{ iso.filename }}.sha256sum.txt">SHA256</a>
+										</span>
 				          </td>
 				        </tr>
 					  	{% endfor %}
