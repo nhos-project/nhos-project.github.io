@@ -10,7 +10,7 @@ date: 2017-10-10
 </style>
 <div class="responsive-wrap">
 <!-- this is the embed code provided by Google -->
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTVLlywrRdnBzjYQB4NeaU9138A5U26oPr0qqvfUjMEsYt9Hhd2vqB7ljMVO9ynVWiq9vDLC_kOLkHj/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTKAC4hf8gburvfh-GVOajy44LiMRL7FX2v1mwxiw-DoT_S9qLnKQhr6ATGdSQL5F4BMcPhoGF4nPJV/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 <!-- Google embed ends -->
 </div>
 
